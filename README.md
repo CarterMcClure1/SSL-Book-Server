@@ -13,4 +13,11 @@ This project is a C-based socket programming system that allows multiple clients
 🔧 Developed using low-level POSIX sockets and OpenSSL
 
 
-This is runnable in linux. If you included the makefile, you can type the "make" to compile this program. Then run ./server server.conf on one linux terminal and ./client client.conf on another. 
+This is runnable in linux. There are three steps to this
+-If you included the makefile, you can type the "make" to compile this program. 
+
+-Generate the .key and .crt files for SSL context. Run "openssl req -x509 -newkey rsa:2048 -keyout p3server.key -out p3server.crt -days 365 -nodes -subj "/CN=localhost""
+
+Then run "./server server.conf" on one linux terminal and "./client client.conf" on another. 
+
+Then use HELP to see available commands.
